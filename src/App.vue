@@ -163,7 +163,11 @@ onMounted(() => {
     <n-el>
       <GlobalComponents></GlobalComponents>
       <n-layout>
-        <n-layout-header bordered style="background-color:var(--primary-color)">
+        <!-- 固定在顶部的导航栏 -->
+        <n-layout-header
+          bordered
+          style="background-color: var(--primary-color); position: sticky; top: 0; z-index: 10;"
+        >
           <n-space class="container" justify="space-between">
             <div style="height:42px;display: flex;align-items: center;padding: 4px;">
               <n-button @click="drawer_model = true" circle type="primary" text-color="#FFF"
@@ -227,22 +231,21 @@ onMounted(() => {
           </router-view>
         </n-layout-content>
 
-
         <n-layout-footer style="text-align:center;min-height: 11vh;">
           <h4 style="margin: auto;font-size: 14px;">{{ hitokoto }}</h4>
           <div><n-button @click="ToTop" text size="large">👆回到顶部👆</n-button></div>
           <div>
             <n-a href="https://github.com/BIT101-dev" target="_blank">GitHub</n-a>
-            ｜
+            ｜ 
             <n-a href="https://bit101-project.feishu.cn/wiki/OY1Xw6y27iNZqgkSDCkc5Cfdnjc" target="_blank">加入BIT101</n-a>
           </div>
           <div style="font-size: 14px;">Powered⚡ by BIT101 Project Team with 💖.</div>
-
         </n-layout-footer>
       </n-layout>
     </n-el>
   </n-config-provider>
 </template>
+
 
 <style>
 @font-face {
